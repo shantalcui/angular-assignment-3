@@ -1,0 +1,12 @@
+<button class="btn btn-primary" (click)="onChangeDisplayStatus()">
+    Display Details
+</button>
+<p *ngIf="displayStatus; else detailHidden">{{ secretPassword }}</p>
+<ng-template #detailHidden>
+    <p> </p>
+</ng-template>
+
+<!-- <app-clicks *ngFor="let clickLog of clickLogs"></app-clicks> -->
+
+<p *ngFor="let clickLog of clickLogs" [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{white: clickCount > 5}">{{
+    clickLog }}</p>
